@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://cmco4pvjbkyhh" path="res://resources/noise_meter.tres" id="3_7dfxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fd"]
+resource_local_to_scene = true
 size = Vector2(16, 16)
 
 [node name="NoiseMeter" type="AnimatableBody2D"]
