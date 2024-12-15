@@ -13,5 +13,14 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	var vect = get_global_mouse_position() - position
-	velocity = velocity.move_toward(vect * MAX_SPEED, ACCELERATION * delta)
+	var target_position = get_global_mouse_position()
+	var direction = (target_position - global_position).normalized()
+	var movement = direction * MAX_SPEED
+	#fun version of following cursor with acceleration,
+	#kinda looks like a skating snowball
+	velocity = velocity.move_toward(movement, ACCELERATION * delta)
+	move_and_slide()
+	
+	#following the cursor without acceleration
+	#if global_position.distance_to(target_position) > 10:
+		#global_position += movement
