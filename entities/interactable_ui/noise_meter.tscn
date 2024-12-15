@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmj6tfhehx8i2"]
+
+[ext_resource type="Script" path="res://entities/interactable_ui/noise_meter.gd" id="1_1ewvi"]
+[ext_resource type="Texture2D" uid="uid://d8bv80o8k66e" path="res://entities/interactable_ui/noise_meter.png" id="2_jjbq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fd"]
+size = Vector2(16, 16)
+
+[node name="NoiseMeter" type="AnimatableBody2D"]
+script = ExtResource("1_1ewvi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_hh0fd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+texture = ExtResource("2_jjbq8")

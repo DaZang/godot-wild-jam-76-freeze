@@ -19,6 +19,7 @@ func _ready():
 	
 func _physics_process(delta):
 	if Input.is_action_pressed("left_mouse_button"):
+		GameEvents.emit_noise_level_changed(80)
 		var acceleration_vector = get_global_mouse_position() - position
 		if acceleration_vector.length() < 20:
 			acceleration_vector = Vector2.ZERO
@@ -27,6 +28,7 @@ func _physics_process(delta):
 		acceleration_vector = acceleration_vector * capped_acceleration_multiplier
 		velocity = velocity.move_toward(acceleration_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
+		GameEvents.emit_noise_level_changed(16)
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()
 
