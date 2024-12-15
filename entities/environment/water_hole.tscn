@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ixyvfs5c0l75" path="res://entities/environment/water_hole.png" id="1_6yq5s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spcfj"]
-size = Vector2(12, 12)
+size = Vector2(16, 16)
 
 [node name="WaterHole" type="Area2D"]
 collision_layer = 4
