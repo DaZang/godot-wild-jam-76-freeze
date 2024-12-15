@@ -29,7 +29,7 @@ func on_noise_level_changed(noise_level: int):
 	size_tween.tween_property(self, "new_size", target_size, 0.5).set_ease(Tween.EASE_IN_OUT)
 	
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	collision_shape_2d.position = new_position
 	collision_shape_2d.shape.extents = new_size / 2
 	sprite_2d.position = new_position
