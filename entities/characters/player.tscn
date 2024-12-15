@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://drg4fkor54j4"]
+[gd_scene load_steps=6 format=3 uid="uid://drg4fkor54j4"]
 
 [ext_resource type="Script" path="res://entities/characters/player.gd" id="1_arrur"]
 [ext_resource type="Texture2D" uid="uid://dhcqy23gi38xw" path="res://entities/characters/player.png" id="2_wr55l"]
+[ext_resource type="Script" path="res://entities/characters/player_crash_collider.gd" id="3_keq70"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ydwu"]
-radius = 5.0
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjhpb"]
+radius = 1.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -16,3 +20,14 @@ texture = ExtResource("2_wr55l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2ydwu")
+
+[node name="PlayerCrashCollider" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_keq70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCrashCollider"]
+shape = SubResource("CircleShape2D_qjhpb")
+
+[connection signal="area_entered" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_area_entered"]

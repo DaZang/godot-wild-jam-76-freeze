@@ -1,24 +1,23 @@
 class_name Player
 extends CharacterBody2D
 
+const START_POSITION = Vector2(25, 294)
+
 @export var ACCELERATION = 200
 @export var MAX_SPEED = 2
 @export var MAX_ACCELERATION_VECTOR_LENGTH = 40
 @export var FRICTION = 50
 
+@onready var player_crash_collider: PlayerCrashCollider = %PlayerCrashCollider
+
 var input_vector = Vector2.ZERO
 
 
 func _ready():
-	pass
+	player_crash_collider.collided.connect(on_collided)
 	
 	
 func _physics_process(delta):
-	#var target_position = get_global_mouse_position()
-	#var direction = (target_position - global_position).normalized()
-	#var movement = direction * MAX_SPEED
-#
-	#velocity = velocity.move_toward(movement, ACCELERATION * delta)
 	if Input.is_action_pressed("left_mouse_button"):
 		var acceleration_vector = get_global_mouse_position() - position
 		if acceleration_vector.length() < 20:
@@ -30,3 +29,8 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move_and_slide()
+
+
+func on_collided():
+	global_position = START_POSITION
+	velocity = Vector2.ZERO

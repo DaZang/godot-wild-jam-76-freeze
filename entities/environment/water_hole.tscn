@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://g36ft66mdl0g"]
+
+[ext_resource type="Texture2D" uid="uid://ixyvfs5c0l75" path="res://entities/environment/water_hole.png" id="1_6yq5s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spcfj"]
+size = Vector2(12, 12)
+
+[node name="WaterHole" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6yq5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_spcfj")
