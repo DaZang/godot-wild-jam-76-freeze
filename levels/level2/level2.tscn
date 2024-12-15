@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAQAAAAoAAAAAAAAAAQAAAAsAAAAAAAA
 tile_set = SubResource("TileSet_2q2mw")
 
 [node name="SpeedMeter" parent="." instance=ExtResource("4_csb0g")]
-position = Vector2(387, 247)
+position = Vector2(387, 252)
 
 [node name="Player" parent="." instance=ExtResource("4_yc83t")]
 position = Vector2(18, 301)

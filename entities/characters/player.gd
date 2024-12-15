@@ -11,9 +11,12 @@ const MAX_SPEED = 300
 @onready var player_crash_collider: PlayerCrashCollider = %PlayerCrashCollider
 
 var input_vector = Vector2.ZERO
+var boarded_bridge: Node2D
 
 
 func _ready():
+	player_crash_collider.bridge_boarded.connect(on_bridge_boarded)
+	player_crash_collider.bridge_left.connect(on_bridge_left)
 	player_crash_collider.collided.connect(on_collided)
 	
 	
@@ -32,6 +35,16 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	GameEvents.emit_player_speed_changed(velocity.length())
 	move_and_slide()
+	
+	
+func on_bridge_boarded(bridge: Node2D):
+	self.boarded_bridge = bridge
+	bridge.player = self
+	
+	
+func on_bridge_left():
+	self.boarded_bridge.player = null
+	self.boarded_bridge = null
 
 
 func on_collided():

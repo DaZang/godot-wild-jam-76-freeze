@@ -2,6 +2,8 @@ class_name PlayerCrashCollider
 extends Area2D
 
 signal collided
+signal bridge_boarded(bridge: Node2D)
+signal bridge_left()
 
 var collided_water_hole_areas: Array[Area2D]
 var collided_bridge_blocks_areas: Array[PhysicsBody2D]
@@ -12,11 +14,6 @@ func _on_area_entered(area: Area2D) -> void:
 		collided_water_hole_areas.append(area)
 		if collided_bridge_blocks_areas.is_empty():
 			collided.emit()
-			
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("bridge"):
-		collided_bridge_blocks_areas.append(body)
 
 
 func _on_area_exited(area: Area2D) -> void:
@@ -24,11 +21,17 @@ func _on_area_exited(area: Area2D) -> void:
 		var found_index = collided_water_hole_areas.find(area)
 		if found_index != -1:
 			collided_water_hole_areas.remove_at(found_index)
-	
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("bridge"):
+		collided_bridge_blocks_areas.append(body)
+		bridge_boarded.emit(body)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("bridge"):
+		bridge_left.emit()
 		var found_index = collided_bridge_blocks_areas.find(body)
 		if found_index != -1:
 			collided_bridge_blocks_areas.remove_at(found_index)
