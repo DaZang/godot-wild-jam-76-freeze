@@ -25,5 +25,8 @@ tile_set = SubResource("TileSet_2q2mw")
 [node name="NoiseMeter" parent="." instance=ExtResource("4_c8168")]
 position = Vector2(312, 111)
 
+[node name="NoiseMeter2" parent="." instance=ExtResource("4_c8168")]
+position = Vector2(990, 337)
+
 [node name="Player" parent="." instance=ExtResource("2_xe43i")]
 position = Vector2(18, 301)
