@@ -21,7 +21,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("left_mouse_button"):
 		GameEvents.emit_noise_level_changed(80)
 		var acceleration_vector = get_global_mouse_position() - position
-		if acceleration_vector.length() < 20:
+		if acceleration_vector.length() < 10:
 			acceleration_vector = Vector2.ZERO
 		var capped_acceleration_multiplier = min(acceleration_vector.length(), MAX_ACCELERATION_VECTOR_LENGTH) \
 			/ MAX_ACCELERATION_VECTOR_LENGTH

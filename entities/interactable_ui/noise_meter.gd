@@ -1,10 +1,12 @@
 extends AnimatableBody2D
 
-@onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
-@onready var sprite_2d: Sprite2D = %Sprite2D
+const BLOCK_SIZE = 16
 
 var start_position: Vector2
 var start_size: Vector2
+
+@onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
+@onready var sprite_2d: Sprite2D = %Sprite2D
 
 
 func _ready():
@@ -14,10 +16,12 @@ func _ready():
 	
 	
 func on_noise_level_changed(noise_level: int):
-	var new_position = Vector2(start_position.x, start_position.y - (noise_level  - 16))
-	var new_size = Vector2(start_size.x, start_size.y + noise_level - 16)
+	var target_position = Vector2(start_position.x, start_position.y - (noise_level/2  - BLOCK_SIZE))
+	var target_size = Vector2(start_size.x, start_size.y + noise_level - BLOCK_SIZE)
+	#var tween = create_tween()
+	#tween.tween_property(self, "")
 	
-	collision_shape_2d.position = new_position
-	collision_shape_2d.shape.extents = new_size / 2
-	sprite_2d.position = new_position
-	sprite_2d.scale = Vector2(1, noise_level / 20)
+	collision_shape_2d.position = target_position
+	collision_shape_2d.shape.extents = target_size / 2
+	sprite_2d.position = target_position
+	sprite_2d.region_rect.size = target_size
