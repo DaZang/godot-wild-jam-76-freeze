@@ -1,4 +1,4 @@
-extends AnimatableBody2D
+extends Node2D
 
 const BLOCK_SIZE = 16
 
