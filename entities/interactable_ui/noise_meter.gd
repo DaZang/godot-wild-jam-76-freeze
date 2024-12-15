@@ -21,7 +21,7 @@ func _ready():
 	
 	
 func on_noise_level_changed(noise_level: int):
-	var target_position = Vector2(start_position.x, start_position.y - (noise_level/2  - BLOCK_SIZE))
+	var target_position = Vector2(start_position.x, start_position.y - (noise_level/2.0  - BLOCK_SIZE))
 	var target_size = Vector2(start_size.x, start_size.y + noise_level - BLOCK_SIZE)
 	var position_tween = create_tween()
 	position_tween.tween_property(self, "new_position", target_position, 0.5).set_ease(Tween.EASE_IN_OUT)

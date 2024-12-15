@@ -24,10 +24,11 @@ shape = SubResource("CircleShape2D_2ydwu")
 [node name="PlayerCrashCollider" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 script = ExtResource("3_keq70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCrashCollider"]
 shape = SubResource("CircleShape2D_qjhpb")
 
 [connection signal="area_entered" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_area_entered"]
+[connection signal="area_exited" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_area_exited"]

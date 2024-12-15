@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b47eakkj13sjs"]
+
+[ext_resource type="Script" path="res://entities/interactable_ui/noise_meter.gd" id="1_ngwu5"]
+[ext_resource type="Texture2D" uid="uid://d8bv80o8k66e" path="res://entities/interactable_ui/noise_meter.png" id="2_icqqs"]
+[ext_resource type="Theme" uid="uid://cmco4pvjbkyhh" path="res://resources/noise_meter.tres" id="3_1qh00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fd"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="SpeedMeter" type="AnimatableBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_ngwu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_hh0fd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(0, -8)
+texture = ExtResource("2_icqqs")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = 11.0
+offset_right = 21.0
+offset_bottom = 34.0
+theme = ExtResource("3_1qh00")
+text = "Speed
+Meter"
