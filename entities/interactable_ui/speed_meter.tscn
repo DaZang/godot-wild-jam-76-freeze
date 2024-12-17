@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fd"]
 resource_local_to_scene = true
-size = Vector2(137.886, 260.922)
+size = Vector2(67.8823, 260.922)
 
 [node name="SpeedMeter" type="Node2D"]
 
@@ -20,15 +20,15 @@ script = ExtResource("1_3jo8b")
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 unique_name_in_owner = true
 texture_repeat = 2
-position = Vector2(-0.75, -129.391)
-scale = Vector2(8.53125, 16.1738)
+position = Vector2(0.235422, -130.451)
+scale = Vector2(4.27113, 16.3066)
 texture = ExtResource("2_641jy")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 unique_name_in_owner = true
-position = Vector2(-1.06068, -130.461)
+position = Vector2(-2.28882e-05, -130.461)
 shape = SubResource("RectangleShape2D_hh0fd")
 
 [node name="Label" type="Label" parent="."]
