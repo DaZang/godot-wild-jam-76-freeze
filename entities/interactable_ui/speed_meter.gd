@@ -2,15 +2,16 @@ extends Node2D
 
 var player: Player
 
-var current_velocity = Vector2.ZERO
+var previous_force = Vector2.ZERO
 
 func _ready():
 	GameEvents.player_speed_changed.connect(on_player_speed_changed)
 	
 	
-func on_player_speed_changed(speed: float):
+func on_player_speed_changed(speed: float, delta: float):
 	var old_rotation_degrees = rotation_degrees
-	var new_rotation_degrees = 90 * (speed / Player.MAX_SPEED) - 45
+	#var new_rotation_degrees = 90 * (speed / Player.MAX_SPEED) - 45
+	var new_rotation_degrees = old_rotation_degrees + 0.5
 	set_rotation_degrees(new_rotation_degrees)
 	if player != null:
 		var rotation_difference_degrees = new_rotation_degrees - old_rotation_degrees
@@ -24,6 +25,9 @@ func on_player_speed_changed(speed: float):
 					- player_distance_vector.y * sin(rotation_difference_radians),
 			player_distance_vector.x * sin(rotation_difference_radians) \
 					+ player_distance_vector.y * cos(rotation_difference_radians) )
-		var added_velocity = rotated_player_distance_vector - player_distance_vector
-		print("rotated_player_distance: " + str(added_velocity))
-		player.velocity += added_velocity
+		var force = rotated_player_distance_vector - player_distance_vector
+		print("force: " + str(force))
+		
+		var added_force = force - previous_force
+		GameEvents.emit_player_moved_by_absolute_vector(added_force, delta)
+		previous_force = force
