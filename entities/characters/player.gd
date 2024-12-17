@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 const START_POSITION = Vector2(25, 294)
 
-@export var ACCELERATION = 200
-const MAX_SPEED = 300
+@export var ACCELERATION = 300
+const MAX_SPEED = 350
 @export var MAX_ACCELERATION_VECTOR_LENGTH = 40
 @export var FRICTION = 50
 

@@ -17,7 +17,25 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("load_level_2"):
 		load_level("2")
 	elif event.is_action_pressed("load_level_3"):
+		load_level("3")
+	elif event.is_action_pressed("load_level_4"):
+		load_level("4")
+	elif event.is_action_pressed("load_level_5"):
+		#load_level("5")
 		pass
+	elif event.is_action_pressed("load_level_6"):
+		#load_level("6")
+		pass
+	elif event.is_action_pressed("load_level_7"):
+		#load_level("7")
+		pass
+	elif event.is_action_pressed("load_level_8"):
+		#load_level("8")
+		pass
+	elif event.is_action_pressed("load_level_9"):
+		#load_level("9")
+		pass
+		
 
 
 func load_level(level_id: String):
