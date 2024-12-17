@@ -5,7 +5,7 @@ on:
       - '**'
 
 env:
-  GODOT_VERSION: 4.3.stable
+  GODOT_VERSION: 4.3
   EXPORT_NAME: freezy-the-frozen-lake-courier
   ITCHIO_USERNAME: indigomountain
   ITCHIO_GAME: freezy-the-frozen-lake-courier
@@ -19,7 +19,7 @@ jobs:
       image: barichello/godot-ci:4.3
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           lfs: true
       - name: Setup
