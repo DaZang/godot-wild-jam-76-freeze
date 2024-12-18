@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1t8rv1r87kau"]
+[gd_scene load_steps=3 format=3 uid="uid://d1t8rv1r87kau"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1xmq6"]
+[ext_resource type="PackedScene" uid="uid://khyirdyy54uj" path="res://levels/world.tscn" id="2_etgw4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1xmq6")
@@ -12,3 +13,5 @@ position = Vector2(512, 288)
 unique_name_in_owner = true
 offset_right = 145.0
 offset_bottom = 36.0
+
+[node name="World" parent="." instance=ExtResource("2_etgw4")]

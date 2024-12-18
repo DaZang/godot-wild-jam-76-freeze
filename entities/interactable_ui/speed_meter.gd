@@ -4,6 +4,7 @@ var player: Player
 
 var previous_force = Vector2.ZERO
 
+
 func _ready():
 	GameEvents.player_speed_changed.connect(on_player_speed_changed)
 	
@@ -14,7 +15,6 @@ func on_player_speed_changed(speed: float, delta: float):
 	var target_rotation_degrees = old_rotation_degrees + 10
 	var new_rotation_degrees = lerp(old_rotation_degrees, target_rotation_degrees, \
 			delta) # prevent feedback loop between player speed on bridge and bridge speed
-	
 	set_rotation_degrees(new_rotation_degrees)
 	if player != null:
 		var rotation_difference_degrees = new_rotation_degrees - old_rotation_degrees
