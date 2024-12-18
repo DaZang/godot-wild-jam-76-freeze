@@ -1,3 +1,43 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://cmpo7c2nibhbw"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://cmpo7c2nibhbw"]
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_ybk7o"]
+resource_name = "Amplify"
+volume_db = -7.0
+
+[sub_resource type="AudioEffectEQ10" id="AudioEffectEQ10_k7ev4"]
+resource_name = "EQ10"
+band_db/31_hz = -5.9
+band_db/62_hz = 5.9
+band_db/125_hz = 5.7
+band_db/250_hz = 4.6
+band_db/2000_hz = -60.0
+band_db/4000_hz = -60.0
+band_db/8000_hz = -60.0
+band_db/16000_hz = -60.0
+
+[sub_resource type="AudioEffectFilter" id="AudioEffectFilter_topvu"]
+resource_name = "Filter"
+cutoff_hz = 20000.0
+db = 1
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_gpvys"]
+resource_name = "Compressor"
+threshold = -6.0
+gain = 5.8
+mix = 0.87
 
 [resource]
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -0.128275
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectAmplify_ybk7o")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectEQ10_k7ev4")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectFilter_topvu")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectCompressor_gpvys")
+bus/1/effect/3/enabled = true

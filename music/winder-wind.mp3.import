@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/winder-wind.mp3-26d2e22f56455d290e85eb7e30480
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
