@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnnc47m4834vj"]
+
+[ext_resource type="Script" path="res://levels/finish_level_area.gd" id="1_8vqil"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gocja"]
+size = Vector2(20, 48)
+
+[node name="FinishLevelArea" type="Node2D"]
+script = ExtResource("1_8vqil")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gocja")

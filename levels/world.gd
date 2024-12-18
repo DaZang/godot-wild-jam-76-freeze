@@ -1,5 +1,12 @@
 extends Node2D
 
+var current_level_id = "1"
+
+
+func _ready():
+	load_level("1")
+	GameEvents.level_completed.connect(on_level_completed)
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("load_level_1"):
@@ -11,10 +18,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("load_level_4"):
 		load_level("4")
 	elif event.is_action_pressed("load_level_5"):
-		#load_level("5")
-		pass
+		load_level("5")
 	elif event.is_action_pressed("load_level_6"):
-		#load_level("6")
+		load_level("6")
 		pass
 	elif event.is_action_pressed("load_level_7"):
 		#load_level("7")
@@ -23,14 +29,23 @@ func _unhandled_input(event: InputEvent) -> void:
 		#load_level("8")
 		pass
 	elif event.is_action_pressed("load_level_9"):
-		#load_level("9")
+		load_level("9")
 		pass
 		
 
 func load_level(level_id: String):
 	print("load level " + level_id)
 	var level_scene = load("res://levels/level" + level_id + "/level" + level_id + ".tscn")
+	if level_scene == null:
+		print("new level scene can not be loaded")
+		return
 	var old_level = get_tree().get_first_node_in_group("level")
-	old_level.queue_free()
+	if old_level != null:
+		old_level.queue_free()
 	var new_level = level_scene.instantiate()
-	add_child(new_level)
+	call_deferred("add_child", new_level)
+	current_level_id = level_id
+
+
+func on_level_completed():
+	load_level(str(current_level_id.to_int() + 1))
