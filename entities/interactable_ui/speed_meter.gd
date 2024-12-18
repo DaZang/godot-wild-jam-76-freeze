@@ -11,8 +11,7 @@ func _ready():
 	
 func on_player_speed_changed(speed: float, delta: float):
 	var old_rotation_degrees = rotation_degrees
-	#var target_rotation_degrees = 90 * (speed / Player.MAX_SPEED) - 45
-	var target_rotation_degrees = old_rotation_degrees + 10
+	var target_rotation_degrees = 90 * (speed / Player.MAX_SPEED) - 45
 	var new_rotation_degrees = lerp(old_rotation_degrees, target_rotation_degrees, \
 			delta) # prevent feedback loop between player speed on bridge and bridge speed
 	set_rotation_degrees(new_rotation_degrees)
