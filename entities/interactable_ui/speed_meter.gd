@@ -31,5 +31,5 @@ func on_player_speed_changed(speed: float, delta: float):
 		print("force: " + str(force))
 		
 		var added_force = force - previous_force
-		GameEvents.emit_player_moved_by_absolute_vector(added_force, delta)
+		GameEvents.emit_player_pushed_by_absolute_vector(added_force, delta)
 		previous_force = force

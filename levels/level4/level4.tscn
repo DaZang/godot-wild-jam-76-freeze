@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://ctvgq0vf8wfet"]
 
-[ext_resource type="TileSet" uid="uid://chxup0te71h6j" path="res://resources/level_tileset.tres" id="1_1dd5g"]
+[ext_resource type="TileSet" uid="uid://chxup0te71h6j" path="res://levels/level_tileset.tres" id="1_1dd5g"]
 [ext_resource type="PackedScene" uid="uid://g36ft66mdl0g" path="res://entities/environment/water_hole.tscn" id="2_47bfu"]
 [ext_resource type="PackedScene" uid="uid://bmj6tfhehx8i2" path="res://entities/interactable_ui/noise_meter.tscn" id="3_k3qks"]
 [ext_resource type="PackedScene" uid="uid://drg4fkor54j4" path="res://entities/characters/player.tscn" id="4_y3sf2"]

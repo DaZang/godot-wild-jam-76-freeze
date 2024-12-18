@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://bqkno3qvdwnkh"]
 
-[ext_resource type="TileSet" uid="uid://chxup0te71h6j" path="res://resources/level_tileset.tres" id="1_yevuk"]
+[ext_resource type="TileSet" uid="uid://chxup0te71h6j" path="res://levels/level_tileset.tres" id="1_yevuk"]
 [ext_resource type="PackedScene" uid="uid://g36ft66mdl0g" path="res://entities/environment/water_hole.tscn" id="2_qbhac"]
 [ext_resource type="PackedScene" uid="uid://b47eakkj13sjs" path="res://entities/interactable_ui/speed_meter.tscn" id="3_v3176"]
 [ext_resource type="PackedScene" uid="uid://drg4fkor54j4" path="res://entities/characters/player.tscn" id="4_yef1d"]

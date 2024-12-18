@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://entities/interactable_ui/noise_meter.gd" id="1_1ewvi"]
 [ext_resource type="Texture2D" uid="uid://d8bv80o8k66e" path="res://entities/interactable_ui/noise_meter.png" id="2_jjbq8"]
-[ext_resource type="Theme" uid="uid://cmco4pvjbkyhh" path="res://resources/noise_meter.tres" id="3_7dfxg"]
+[ext_resource type="Theme" uid="uid://cmco4pvjbkyhh" path="res://entities/interactable_ui/interactable_ui.tres" id="3_7dfxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fd"]
 resource_local_to_scene = true
