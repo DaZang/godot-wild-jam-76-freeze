@@ -6,7 +6,7 @@ const START_POSITION = Vector2(25, 294)
 @export var ACCELERATION = 300
 const MAX_SPEED = 350
 @export var MAX_ACCELERATION_VECTOR_LENGTH = 40
-@export var FRICTION = 50
+@export var FRICTION = 10
 
 @onready var player_crash_collider: PlayerCrashCollider = %PlayerCrashCollider
 
@@ -18,7 +18,6 @@ func _ready():
 	player_crash_collider.bridge_boarded.connect(on_bridge_boarded)
 	player_crash_collider.bridge_left.connect(on_bridge_left)
 	player_crash_collider.collided.connect(on_collided)
-	GameEvents.player_pushed_by_absolute_vector.connect(on_player_pushed_by_absolute_vector)
 	
 	
 func _physics_process(delta):
@@ -33,7 +32,7 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(normalized_acceleration_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
 		GameEvents.emit_noise_level_changed(16)
-		#velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	GameEvents.emit_player_speed_changed(velocity.length(), delta)
 	move_and_slide()
 	
@@ -53,7 +52,7 @@ func on_collided():
 	velocity = Vector2.ZERO
 
 
-func on_player_pushed_by_absolute_vector(vector: Vector2, delta):
+func push_player(vector: Vector2, delta):
 	var added_velocity = vector / delta
 	print("before velocity: " + str(velocity))
 	print("added velocity: " + str(added_velocity))
