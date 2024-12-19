@@ -3,10 +3,10 @@ extends CharacterBody2D
 
 const START_POSITION = Vector2(25, 294)
 
-@export var ACCELERATION = 300
-const MAX_SPEED = 350
-@export var MAX_ACCELERATION_VECTOR_LENGTH = 40
-@export var FRICTION = 10
+@export var acceleration = 300
+@export var max_speed = 350
+@export var max_acceleration_vector_length = 40
+@export var friction = 60
 
 @onready var player_crash_collider: PlayerCrashCollider = %PlayerCrashCollider
 
@@ -26,14 +26,14 @@ func _physics_process(delta):
 		var acceleration_vector = get_global_mouse_position() - position
 		if acceleration_vector.length() < 10:
 			acceleration_vector = Vector2.ZERO
-		if acceleration_vector.length() > MAX_ACCELERATION_VECTOR_LENGTH:
-			acceleration_vector = acceleration_vector.normalized() * MAX_ACCELERATION_VECTOR_LENGTH
+		if acceleration_vector.length() > max_acceleration_vector_length:
+			acceleration_vector = acceleration_vector.normalized() * max_acceleration_vector_length
 		var normalized_acceleration_vector = acceleration_vector.normalized()
-		velocity = velocity.move_toward(normalized_acceleration_vector * MAX_SPEED, ACCELERATION * delta)
+		velocity = velocity.move_toward(normalized_acceleration_vector * max_speed, acceleration * delta)
 	else:
 		GameEvents.emit_noise_level_changed(16)
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	GameEvents.emit_player_speed_changed(velocity.length(), delta)
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+	GameEvents.emit_player_speed_changed(velocity.length(), max_speed, delta)
 	move_and_slide()
 	
 	
