@@ -37,7 +37,7 @@ func load_level(level_id: String):
 	print("load level " + level_id)
 	var level_scene = load("res://levels/level" + level_id + "/level" + level_id + ".tscn")
 	if level_scene == null:
-		print("new level scene can not be loaded")
+		print("new level scene can not be loajded")
 		return
 	var old_level = get_tree().get_first_node_in_group("level")
 	if old_level != null:

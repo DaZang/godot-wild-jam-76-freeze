@@ -6,14 +6,10 @@ volume_db = -7.0
 
 [sub_resource type="AudioEffectEQ10" id="AudioEffectEQ10_k7ev4"]
 resource_name = "EQ10"
-band_db/31_hz = -5.9
-band_db/62_hz = 5.9
-band_db/125_hz = 5.7
-band_db/250_hz = 4.6
-band_db/2000_hz = -60.0
-band_db/4000_hz = -60.0
-band_db/8000_hz = -60.0
-band_db/16000_hz = -60.0
+band_db/31_hz = -3.4
+band_db/62_hz = 2.9
+band_db/125_hz = 3.2
+band_db/250_hz = 2.9
 
 [sub_resource type="AudioEffectFilter" id="AudioEffectFilter_topvu"]
 resource_name = "Filter"
@@ -31,7 +27,7 @@ bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -0.128275
+bus/1/volume_db = -5.93075
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectAmplify_ybk7o")
 bus/1/effect/0/enabled = true
