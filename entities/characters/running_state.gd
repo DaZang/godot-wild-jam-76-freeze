@@ -7,8 +7,8 @@ var player : Player
 func enter():
 	player = get_parent().entity as Player
 	player.sound_animation_player.play("running_sound")
+	print(80)
 	GameEvents.emit_noise_level_changed(80)
-	
 
 func exit():
 	player.sound_animation_player.stop()
