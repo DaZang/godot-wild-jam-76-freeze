@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bon7fogajie6x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wadms"]
+content_margin_top = 4.0
+content_margin_right = 4.0
+bg_color = Color(0.215902, 0.215902, 0.215902, 1)
+border_color = Color(0.625597, 0.625597, 0.625597, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0.729412, 0.729412, 0.729412, 0.909804)
+
+[resource]
+HSlider/styles/slider = SubResource("StyleBoxFlat_wadms")
+Label/font_sizes/font_size = 22
