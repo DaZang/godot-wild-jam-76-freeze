@@ -25,4 +25,5 @@ func physics_update(delta):
 	var normalized_acceleration_vector = acceleration_vector.normalized()
 	player.velocity = player.velocity.move_toward( \
 			normalized_acceleration_vector * player.max_speed, player.acceleration * delta)
+	GameEvents.emit_player_speed_changed(player.velocity.length(), player.max_speed, delta)
 	player.move_and_slide()
