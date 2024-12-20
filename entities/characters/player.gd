@@ -10,8 +10,13 @@ const START_POSITION = Vector2(25, 294)
 
 @onready var player_crash_collider: PlayerCrashCollider = %PlayerCrashCollider
 
+var sound_animation_player # is accessed in state machine before this node is ready
 var input_vector = Vector2.ZERO
 var boarded_bridge: Node2D
+
+
+func _enter_tree():
+	sound_animation_player = %SoundAnimationPlayer # is accessed in state machine before this node is ready
 
 
 func _ready():

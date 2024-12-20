@@ -6,11 +6,12 @@ var player : Player
 
 func enter():
 	player = get_parent().entity as Player
+	player.sound_animation_player.play("running_sound")
 	GameEvents.emit_noise_level_changed(80)
 	
 
 func exit():
-	pass
+	player.sound_animation_player.stop()
 	
 
 func physics_update(delta):
