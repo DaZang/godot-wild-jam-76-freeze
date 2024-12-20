@@ -17,10 +17,10 @@ func on_player_speed_changed(speed: float, max_speed: float, delta: float):
 	set_rotation_degrees(new_rotation_degrees)
 	if player != null:
 		push_player_based_on_rotation(new_rotation_degrees, old_rotation_degrees, delta)
-		
 
 
-func push_player_based_on_rotation(new_rotation_degrees: float, old_rotation_degrees: float, delta:float):
+func push_player_based_on_rotation(new_rotation_degrees: float, old_rotation_degrees: \
+		float, delta:float):
 	var rotation_difference_degrees = new_rotation_degrees - old_rotation_degrees
 	#print("rotation_difference_degrees: " + str(rotation_difference_degrees))
 	var rotation_difference_radians = deg_to_rad(rotation_difference_degrees)

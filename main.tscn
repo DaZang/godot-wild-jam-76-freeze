@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1t8rv1r87kau"]
+[gd_scene load_steps=4 format=3 uid="uid://d1t8rv1r87kau"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1xmq6"]
 [ext_resource type="PackedScene" uid="uid://khyirdyy54uj" path="res://levels/world.tscn" id="2_etgw4"]
+[ext_resource type="PackedScene" uid="uid://cvy5golqjd2jv" path="res://ui/frames_per_second_ui.tscn" id="3_7kwd2"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1xmq6")
@@ -15,3 +16,7 @@ offset_right = 145.0
 offset_bottom = 36.0
 
 [node name="World" parent="." instance=ExtResource("2_etgw4")]
+
+[node name="HudCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FramesPerSecondUi" parent="HudCanvasLayer" instance=ExtResource("3_7kwd2")]

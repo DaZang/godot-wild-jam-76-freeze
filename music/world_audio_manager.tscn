@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://oasbm83cu5r5"]
+
+[ext_resource type="AudioStream" uid="uid://c7k6xn0nj5ay8" path="res://music/winder-wind.mp3" id="1_vco0u"]
+[ext_resource type="Script" path="res://music/world_audio_manager.gd" id="2_6h4iu"]
+
+[node name="WorldAudioManager" type="Node"]
+script = ExtResource("2_6h4iu")
+
+[node name="WorldMusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_vco0u")
+autoplay = true
+bus = &"Music"

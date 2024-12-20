@@ -1,13 +1,13 @@
-extends AudioStreamPlayer
+extends Node
 
 enum Direction {
 	UP,
 	DOWN
 }
 
-var initial_music_volume_db: float
-
 const DAMPEN_MUSIC_TRANSITION_INTERVAL = 0.45
+
+var initial_music_volume_db: float
 
 
 func _ready() -> void:
