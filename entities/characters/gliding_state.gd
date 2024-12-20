@@ -3,17 +3,23 @@ extends State
 
 var player : Player
 
+@onready var glide_audio_stream_player_2d: AudioStreamPlayer2D = %GlideAudioStreamPlayer2D
+
 
 func enter():
 	player = get_parent().entity as Player
+	glide_audio_stream_player_2d.play()
 	GameEvents.emit_noise_level_changed(16)
 
 
 func exit():
-	pass
+	glide_audio_stream_player_2d.stop()
 	
 
 func physics_update(delta):
+	glide_audio_stream_player_2d.volume_db = \
+			min( -60 + player.velocity.length() / 5.0 + player.glide_default_volume_db, \
+			player.glide_default_volume_db)
 	if Input.is_action_pressed("left_mouse_button"):
 		transitioned.emit("RunningState")
 		return

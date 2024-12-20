@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drg4fkor54j4"]
+[gd_scene load_steps=17 format=3 uid="uid://drg4fkor54j4"]
 
 [ext_resource type="Script" path="res://entities/characters/player.gd" id="1_arrur"]
 [ext_resource type="Texture2D" uid="uid://dhcqy23gi38xw" path="res://entities/characters/player.png" id="2_wr55l"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://qt15tni1f0fu" path="res://entities/characters/skate_2.mp3" id="8_bgcr1"]
 [ext_resource type="AudioStream" uid="uid://bi4qiyv46gy2w" path="res://entities/characters/skate_3.mp3" id="9_xiaur"]
 [ext_resource type="AudioStream" uid="uid://dntetvdpa2g20" path="res://entities/characters/skate_4.mp3" id="10_g7782"]
+[ext_resource type="AudioStream" uid="uid://5ltmmt7v1gn4" path="res://entities/characters/glide_wind.mp3" id="11_niykf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ydwu"]
 radius = 1.0
@@ -24,7 +25,7 @@ loop_mode = 1
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/path = NodePath("MovementStateMachine/RunningState/RunAudioStreamPlayer2D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -82,11 +83,18 @@ entity = NodePath("..")
 [node name="GlidingState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("6_rtbub")
 
+[node name="GlideAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MovementStateMachine/GlidingState"]
+unique_name_in_owner = true
+stream = ExtResource("11_niykf")
+bus = &"SFX"
+
 [node name="RunningState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("5_d8hdh")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="RunAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MovementStateMachine/RunningState"]
+unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_ggcn3")
+bus = &"SFX"
 
 [connection signal="area_entered" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_area_entered"]
 [connection signal="area_exited" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_area_exited"]
