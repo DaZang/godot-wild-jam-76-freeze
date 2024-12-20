@@ -43,7 +43,7 @@ func slide_volume(bus_index: int, direction: Direction) -> void:
 				DAMPEN_MUSIC_TRANSITION_INTERVAL) 
 	if direction == Direction.DOWN:
 		slide_volume_tween.tween_method(set_volume.bind(bus_index), \
-				AudioServer.get_bus_volume_db(bus_index), initial_music_volume_db - 5.0, \
+				AudioServer.get_bus_volume_db(bus_index), initial_music_volume_db - 6.5, \
 				DAMPEN_MUSIC_TRANSITION_INTERVAL)
 		
 		
@@ -60,5 +60,5 @@ func slide_filter(bus_index: int, music_bus_effects_count: int, direction: Direc
 				slide_filter_tween.tween_property(audio_effect, "cutoff_hz", 20000, \
 				DAMPEN_MUSIC_TRANSITION_INTERVAL)
 			if direction == Direction.DOWN:
-				slide_filter_tween.tween_property(audio_effect, "cutoff_hz", 2000, \
+				slide_filter_tween.tween_property(audio_effect, "cutoff_hz", 1000, \
 				DAMPEN_MUSIC_TRANSITION_INTERVAL)
