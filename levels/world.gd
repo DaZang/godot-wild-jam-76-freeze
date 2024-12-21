@@ -44,6 +44,7 @@ func load_level(level_id: String):
 		old_level.queue_free()
 	var new_level = level_scene.instantiate()
 	call_deferred("add_child", new_level)
+	call_deferred("move_child", new_level, 0)
 	current_level_id = level_id
 
 

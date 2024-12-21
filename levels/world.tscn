@@ -1,9 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://khyirdyy54uj"]
+[gd_scene load_steps=6 format=3 uid="uid://khyirdyy54uj"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_4ppcv"]
 [ext_resource type="PackedScene" uid="uid://oasbm83cu5r5" path="res://music/world_audio_manager.tscn" id="2_347h0"]
+[ext_resource type="Shader" path="res://resources/snow.gdshader" id="2_i4muu"]
+[ext_resource type="Texture2D" uid="uid://bij3u3hppharn" path="res://resources/shader_snow_flake.png" id="4_6pd8u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_novq6"]
+shader = ExtResource("2_i4muu")
+shader_parameter/rows = 20.0
+shader_parameter/columns = 5.0
+shader_parameter/vertical_scroll = 0.15
+shader_parameter/horizontal_scroll = 0.03
+shader_parameter/size_min = 0.2
+shader_parameter/size_max = 0.4
+shader_parameter/wave_min = 0.0
+shader_parameter/wave_max = 0.5
+shader_parameter/wave_speed = 0.5
+shader_parameter/wave_rotation = 1.0
+shader_parameter/far_color = Color(0.838897, 0.838897, 0.838897, 1)
+shader_parameter/near_color = Color(1, 1, 1, 1)
+shader_parameter/particle_texture = ExtResource("4_6pd8u")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_4ppcv")
 
 [node name="MusicPlayer" parent="." instance=ExtResource("2_347h0")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_novq6")
+offset_right = 1024.0
+offset_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
