@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1t8rv1r87kau"]
+[gd_scene load_steps=5 format=3 uid="uid://d1t8rv1r87kau"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1xmq6"]
 [ext_resource type="PackedScene" uid="uid://khyirdyy54uj" path="res://levels/world.tscn" id="2_etgw4"]
 [ext_resource type="PackedScene" uid="uid://cvy5golqjd2jv" path="res://ui/frames_per_second_ui.tscn" id="3_7kwd2"]
+[ext_resource type="PackedScene" uid="uid://d4guo4bqqi70a" path="res://ui/pause_menu_ui.tscn" id="4_bttyy"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1xmq6")
@@ -10,13 +11,14 @@ script = ExtResource("1_1xmq6")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(512, 288)
 
-[node name="DebugLabel" type="Label" parent="."]
-unique_name_in_owner = true
-offset_right = 145.0
-offset_bottom = 36.0
-
 [node name="World" parent="." instance=ExtResource("2_etgw4")]
+unique_name_in_owner = true
 
 [node name="HudCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="FramesPerSecondUi" parent="HudCanvasLayer" instance=ExtResource("3_7kwd2")]
+unique_name_in_owner = true
+
+[node name="PauseMenuUi" parent="HudCanvasLayer" instance=ExtResource("4_bttyy")]
+unique_name_in_owner = true
+visible = false
