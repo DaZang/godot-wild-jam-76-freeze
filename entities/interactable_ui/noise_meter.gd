@@ -26,7 +26,6 @@ func _ready():
 	
 	
 func on_noise_level_changed(noise_level: int):
-	print("speed_noise: " + str(noise_level))
 	var move_duration: float
 	var target_position = Vector2(start_position.x, start_position.y \
 			- (noise_level  - BLOCK_SIZE) / 2.0)

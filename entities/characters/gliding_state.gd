@@ -18,7 +18,7 @@ func exit():
 
 func physics_update(delta):
 	glide_audio_stream_player_2d.volume_db = \
-			min( -60 + player.velocity.length() / 5.0 + player.glide_default_volume_db, \
+			min( -60 + sqrt(player.velocity.length()) * 4.5 + player.glide_default_volume_db, \
 			player.glide_default_volume_db)
 	if Input.is_action_pressed("left_mouse_button"):
 		transitioned.emit("RunningState")

@@ -9,7 +9,6 @@ signal sfx_slider_value_changed
 
 
 func _ready() -> void:
-	print("music_level_setting" + str(GameSettings.music_level_setting))
 	music_slider.value = GameSettings.music_level_setting
 	sfx_slider.value = GameSettings.sfx_level_setting
 
