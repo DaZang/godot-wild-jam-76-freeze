@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d4guo4bqqi70a" path="res://ui/pause_menu_ui.tscn" id="4_bttyy"]
 
 [node name="Main" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_1xmq6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -13,6 +14,7 @@ position = Vector2(512, 288)
 
 [node name="World" parent="." instance=ExtResource("2_etgw4")]
 unique_name_in_owner = true
+process_mode = 1
 
 [node name="HudCanvasLayer" type="CanvasLayer" parent="."]
 

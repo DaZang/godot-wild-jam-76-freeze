@@ -8,8 +8,8 @@ extends Node2D
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if pause_menu_ui.visible:
-			pause_menu_ui.hide()
 			world.get_tree().paused = false
+			pause_menu_ui.hide()
 		else:
-			pause_menu_ui.show()
 			world.get_tree().paused = true
+			pause_menu_ui.show()

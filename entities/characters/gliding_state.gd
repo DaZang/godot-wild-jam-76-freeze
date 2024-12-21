@@ -9,7 +9,6 @@ var player : Player
 func enter():
 	player = get_parent().entity as Player
 	glide_audio_stream_player_2d.play()
-	print(16)
 	GameEvents.emit_noise_level_changed(16)
 
 
