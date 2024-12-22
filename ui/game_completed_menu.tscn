@@ -59,7 +59,7 @@ theme_override_constants/margin_bottom = 50
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Success: You have won the game! ⛄"
+text = "Success: You have won the game!"
 
 [node name="ButtonMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

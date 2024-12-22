@@ -89,6 +89,8 @@ stream = ExtResource("11_niykf")
 volume_db = 8.0
 bus = &"SFX"
 
+[node name="TemperatureSinkingTimer" type="Timer" parent="MovementStateMachine/GlidingState"]
+
 [node name="RunningState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("5_d8hdh")
 
@@ -101,3 +103,4 @@ bus = &"SFX"
 [connection signal="area_exited" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_area_exited"]
 [connection signal="body_entered" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_body_entered"]
 [connection signal="body_exited" from="PlayerCrashCollider" to="PlayerCrashCollider" method="_on_body_exited"]
+[connection signal="timeout" from="MovementStateMachine/GlidingState/TemperatureSinkingTimer" to="MovementStateMachine/GlidingState" method="_on_temperature_sinking_timer_timeout"]

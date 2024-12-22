@@ -22,14 +22,15 @@ func _ready():
 	start_size = collision_shape_2d.shape.get_rect().size
 	new_position = start_position
 	new_size = start_size
-	GameEvents.noise_level_changed.connect(on_noise_level_changed)
+	GameEvents.temperature_changed.connect(on_temperature_changed)
 	
 	
-func on_noise_level_changed(noise_level: int):
+func on_temperature_changed(temperature: float):
 	var move_duration: float
-	var target_position = Vector2(start_position.x, start_position.y \
-			+ (noise_level  - BLOCK_SIZE) / 2.0)
-	var target_size = Vector2(start_size.x, start_size.y + noise_level - BLOCK_SIZE)
+	var target_position = Vector2(start_position.x, start_position.y + 41.0- temperature)
+	print("target_position: " + str(target_position))
+	var target_size = Vector2(start_size.x, (start_size.y - temperature) / 2.0)
+	print("target_size: " + str(target_size))
 	if (target_position.y < new_position.y):
 		move_duration = MOVE_UP_DURATION
 	else:
@@ -48,6 +49,6 @@ func on_noise_level_changed(noise_level: int):
 	
 func _physics_process(_delta: float) -> void:
 	collision_shape_2d.position = new_position
-	collision_shape_2d.shape.extents = new_size / 2
+	collision_shape_2d.shape.extents = Vector2(new_size.x / 2.0, new_size.y * 2.5)
 	sprite_2d.position = new_position
 	sprite_2d.region_rect.size = new_size

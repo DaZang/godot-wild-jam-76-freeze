@@ -12,14 +12,15 @@ const START_POSITION = Vector2(25, 294)
 @onready var glide_audio_stream_player_2d: AudioStreamPlayer2D = %GlideAudioStreamPlayer2D
 
 var glide_default_volume_db : float
+var temperature: float
 var sound_animation_player # is accessed in state machine before this node is ready
 var input_vector = Vector2.ZERO
 var boarded_bridge: Node2D
 
 
-
 func _enter_tree():
 	sound_animation_player = %SoundAnimationPlayer # is accessed in state machine before this node is ready
+	temperature = 80.0
 
 
 func _ready():
@@ -27,7 +28,7 @@ func _ready():
 	player_crash_collider.bridge_left.connect(on_bridge_left)
 	player_crash_collider.collided.connect(on_collided)
 	glide_default_volume_db = glide_audio_stream_player_2d.volume_db
-	
+	GameEvents.temperature_changed.emit(temperature)
 	
 	
 func on_bridge_boarded(bridge: Node2D):

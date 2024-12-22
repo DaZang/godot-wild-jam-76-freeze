@@ -7,7 +7,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh0fd"]
 resource_local_to_scene = true
-size = Vector2(16, 16)
+size = Vector2(16, 81)
 
 [node name="Thermometer" type="AnimatableBody2D"]
 script = ExtResource("1_ev057")
@@ -16,20 +16,22 @@ script = ExtResource("1_ev057")
 position = Vector2(-1, -48)
 texture = ExtResource("2_xqbbh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(-0.999999, -96)
-rotation = -3.14159
-shape = SubResource("RectangleShape2D_hh0fd")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 texture_repeat = 2
-position = Vector2(-0.999999, -96)
+position = Vector2(-1.00008, -63.4832)
 rotation = -3.14159
+scale = Vector2(1, 5.0646)
 texture = ExtResource("3_inimw")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1.00008, -63.5)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_hh0fd")
+debug_color = Color(0, 0.631373, 0.462745, 0.847059)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -49.0
