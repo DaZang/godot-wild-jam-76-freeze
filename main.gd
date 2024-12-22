@@ -13,7 +13,7 @@ func _ready() -> void:
 	GameEvents.game_restart_requested.connect(on_game_restart_requested)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("pause"):
 		if pause_menu_ui.visible:
 			world.get_tree().paused = false
 			pause_menu_ui.hide()

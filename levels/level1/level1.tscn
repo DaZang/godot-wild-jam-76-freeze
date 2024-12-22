@@ -14,7 +14,7 @@ offset_top = 80.0
 offset_right = 728.0
 offset_bottom = 139.0
 theme = ExtResource("2_puvrt")
-text = "Press Escape to open or close the options menu
+text = "Press P key (or right mouse button) to open or close the options menu
 "
 autowrap_mode = 3
 
