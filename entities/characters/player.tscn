@@ -90,6 +90,7 @@ volume_db = 8.0
 bus = &"SFX"
 
 [node name="TemperatureSinkingTimer" type="Timer" parent="MovementStateMachine/GlidingState"]
+wait_time = 0.1
 
 [node name="RunningState" type="Node" parent="MovementStateMachine"]
 script = ExtResource("5_d8hdh")

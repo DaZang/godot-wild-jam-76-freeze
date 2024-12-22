@@ -48,7 +48,4 @@ func on_collided():
 
 func push_player(vector: Vector2, delta):
 	var added_velocity = vector / delta
-	print("before velocity: " + str(velocity))
-	print("added velocity: " + str(added_velocity))
 	velocity += added_velocity
-	print("after velocity: " + str(velocity))

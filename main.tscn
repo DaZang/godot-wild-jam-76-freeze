@@ -21,6 +21,7 @@ unique_name_in_owner = true
 
 [node name="FramesPerSecondUi" parent="HudCanvasLayer" instance=ExtResource("3_7kwd2")]
 unique_name_in_owner = true
+visible = false
 
 [node name="PauseMenuUi" parent="HudCanvasLayer" instance=ExtResource("4_bttyy")]
 unique_name_in_owner = true

@@ -34,5 +34,5 @@ func physics_update(delta):
 
 func _on_temperature_sinking_timer_timeout() -> void:
 	if player.temperature >= 50.0:
-		player.temperature -= 2.5
+		player.temperature -= 0.7
 		GameEvents.emit_temperature_changed(player.temperature)

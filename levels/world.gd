@@ -30,13 +30,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		load_level("6")
 		pass
 	elif event.is_action_pressed("load_level_7"):
-		#load_level("7")
+		load_level("7")
 		pass
 	elif event.is_action_pressed("load_level_8"):
-		#load_level("8")
+		load_level("8")
 		pass
 	elif event.is_action_pressed("load_level_9"):
-		#load_level("9")
+		load_level("9")
 		pass
 		
 

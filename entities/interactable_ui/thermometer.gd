@@ -41,11 +41,8 @@ func on_temperature_changed(temperature: float):
 	
 	
 func calculate_target_position_and_size(temperature: float):
-	print("temp: " + str(temperature))
 	target_position = Vector2(start_position.x, start_position.y + 41.0- temperature)
-	print("target_position: " + str(target_position))
 	target_size = Vector2(start_size.x, (start_size.y - temperature) / 2.0)
-	print("target_size: " + str(target_size))
 	
 	
 func tween_position_and_size() -> void:
