@@ -5,6 +5,10 @@ extends Node2D
 @onready var world: Node2D = %World
 
 
+func _ready() -> void:
+	GameSettings.game_speed_setting_changed.connect(on_game_speed_setting_changed)
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if pause_menu_ui.visible:
@@ -13,3 +17,7 @@ func _input(event: InputEvent) -> void:
 		else:
 			world.get_tree().paused = true
 			pause_menu_ui.show()
+
+
+func on_game_speed_setting_changed(value: float) -> void:
+	Engine.time_scale = value
