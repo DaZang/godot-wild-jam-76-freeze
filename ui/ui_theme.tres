@@ -1,4 +1,7 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bon7fogajie6x"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bon7fogajie6x"]
+
+[ext_resource type="StyleBox" uid="uid://dhaf2wq3nbb48" path="res://ui/restart_game_button_style_hover.tres" id="1_0jgmc"]
+[ext_resource type="StyleBox" uid="uid://6e48ttbje85y" path="res://ui/restart_game_button_style.tres" id="1_j7to7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wadms"]
 content_margin_top = 4.0
@@ -12,6 +15,9 @@ corner_radius_bottom_left = 3
 shadow_color = Color(0.729412, 0.729412, 0.729412, 0.909804)
 
 [resource]
+Button/constants/outline_size = 2
+Button/styles/hover = ExtResource("1_0jgmc")
+Button/styles/normal = ExtResource("1_j7to7")
 CheckButton/colors/icon_normal_color = Color(0, 0, 0, 1)
 CheckButton/constants/outline_size = 3
 HSlider/styles/slider = SubResource("StyleBoxFlat_wadms")
