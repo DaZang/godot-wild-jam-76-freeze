@@ -1,5 +1,6 @@
 // Waving Particles shader by Brian Smith (steampunkdemon.itch.io)
 // MIT licence
+// Modified by https://github.com/DaZang under the GNU GPLv3 license
 
 shader_type canvas_item;
 
