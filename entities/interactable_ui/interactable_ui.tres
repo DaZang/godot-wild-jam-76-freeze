@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cmco4pvjbkyhh"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cmco4pvjbkyhh"]
 
 [ext_resource type="FontFile" uid="uid://kifr4lcgd7dl" path="res://resources/Early GameBoy.ttf" id="1_qpemw"]
+[ext_resource type="FontFile" uid="uid://bf51g71h8bnuf" path="res://resources/m5x7.ttf" id="2_0iidm"]
 
 [resource]
-default_font = ExtResource("1_qpemw")
+default_font = ExtResource("2_0iidm")
 Label/constants/line_spacing = 0
-Label/constants/outline_size = 1
-Label/font_sizes/font_size = 8
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 9
 Label/fonts/font = ExtResource("1_qpemw")

@@ -10,13 +10,14 @@ process_mode = 3
 script = ExtResource("1_1xmq6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(512, 288)
+position = Vector2(480, 270)
 
 [node name="World" parent="." instance=ExtResource("2_etgw4")]
 unique_name_in_owner = true
 process_mode = 1
 
 [node name="HudCanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
 [node name="FramesPerSecondUi" parent="HudCanvasLayer" instance=ExtResource("3_7kwd2")]
 unique_name_in_owner = true
