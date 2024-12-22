@@ -41,9 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 
 func load_level(level_id: String):
-	print("load level " + level_id)
-	
-	var level_scene = load("res://levels/level" + level_id + "/level" + level_id + ".tscn")
+	var level_scene = load("res://levels/" + "level" + level_id + ".tscn")
 	if level_scene == null:
 		print("new level scene can not be loaded")
 		game_completed.emit()
