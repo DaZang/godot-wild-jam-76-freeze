@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.054902, 0.054902, 0.054902, 0.729412)
+color = Color(0.054902, 0.054902, 0.054902, 0.843137)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -57,6 +57,16 @@ max_value = 1.5
 step = 0.05
 value = 1.0
 
+[node name="SnowFallVisualFxLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Snow Visual Effect"
+
+[node name="SnowFallVisualFxButton" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+
 [node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -87,5 +97,6 @@ step = 0.05
 value = 1.0
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/GameSpeedSlider" to="." method="_on_game_speed_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/GridContainer/SnowFallVisualFxButton" to="." method="_on_snow_fall_visual_fx_button_toggled"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/SfxSlider" to="." method="_on_sfx_slider_value_changed"]

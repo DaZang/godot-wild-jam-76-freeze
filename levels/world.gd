@@ -2,10 +2,14 @@ extends Node2D
 
 var current_level_id = "1"
 
+@onready var snow_fall_shader_color_rect: ColorRect = $SnowFallShaderColorRect
+
 
 func _ready():
 	load_level("1")
 	GameEvents.level_completed.connect(on_level_completed)
+	GameSettings.snow_fall_visual_fx_enabled_setting_changed \
+			.connect(on_snow_fall_visual_fx_enabled_setting_changed)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -50,3 +54,10 @@ func load_level(level_id: String):
 
 func on_level_completed():
 	load_level(str(current_level_id.to_int() + 1))
+
+
+func on_snow_fall_visual_fx_enabled_setting_changed(toggled_on: bool) -> void:
+	if toggled_on:
+		snow_fall_shader_color_rect.show()
+	else:
+		snow_fall_shader_color_rect.hide()

@@ -12,5 +12,7 @@ corner_radius_bottom_left = 3
 shadow_color = Color(0.729412, 0.729412, 0.729412, 0.909804)
 
 [resource]
+CheckButton/colors/icon_normal_color = Color(0, 0, 0, 1)
+CheckButton/constants/outline_size = 3
 HSlider/styles/slider = SubResource("StyleBoxFlat_wadms")
 Label/font_sizes/font_size = 22
