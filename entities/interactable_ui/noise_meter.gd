@@ -2,7 +2,7 @@ extends Node2D
 
 const BLOCK_SIZE = 16
 const MOVE_UP_DURATION = 0.2
-const MOVE_DOWN_DURATION = 1.0
+const MOVE_DOWN_DURATION = 0.4
 
 var start_position: Vector2
 var start_size: Vector2

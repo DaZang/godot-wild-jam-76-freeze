@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://v7h74jgsa66m"]
+
+[ext_resource type="Texture2D" uid="uid://b12wxhu15xuie" path="res://entities/environment/heater.png" id="1_n3kgv"]
+[ext_resource type="Script" path="res://entities/environment/heating_area.gd" id="2_23qvf"]
+[ext_resource type="Texture2D" uid="uid://cndkj8d1vyc3m" path="res://entities/environment/heat.png" id="3_6n20w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5x8ua"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d43r8"]
+radius = 31.0161
+
+[node name="Heater" type="StaticBody2D"]
+
+[node name="PhysicsCollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5x8ua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n3kgv")
+
+[node name="HeatingArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_23qvf")
+
+[node name="Sprite2D" type="Sprite2D" parent="HeatingArea"]
+texture = ExtResource("3_6n20w")
+
+[node name="HeaterCollisionShape" type="CollisionShape2D" parent="HeatingArea"]
+shape = SubResource("CircleShape2D_d43r8")
+
+[node name="Polygon2D" type="Polygon2D" parent="HeatingArea"]
+
+[node name="Timer" type="Timer" parent="HeatingArea"]
+wait_time = 0.1
+
+[connection signal="body_entered" from="HeatingArea" to="HeatingArea" method="_on_body_entered"]
+[connection signal="body_exited" from="HeatingArea" to="HeatingArea" method="_on_body_exited"]
+[connection signal="timeout" from="HeatingArea/Timer" to="HeatingArea" method="_on_timer_timeout"]
