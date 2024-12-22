@@ -60,7 +60,7 @@ value = 1.0
 [node name="SnowFallVisualFxLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Snow Visual Snow Effect"
+text = "Visual Snow Effect"
 
 [node name="SnowFallVisualFxButton" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true

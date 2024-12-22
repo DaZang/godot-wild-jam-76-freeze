@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnnc47m4834vj"]
+[gd_scene load_steps=4 format=3 uid="uid://dnnc47m4834vj"]
 
 [ext_resource type="Script" path="res://levels/finish_level_area.gd" id="1_8vqil"]
+[ext_resource type="Texture2D" uid="uid://bwfx8wtalqadc" path="res://levels/finish_level_area.png" id="2_6s7rr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gocja"]
 size = Vector2(20, 48)
@@ -14,3 +15,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_gocja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6s7rr")
